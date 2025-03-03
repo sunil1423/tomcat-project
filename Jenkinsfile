@@ -7,7 +7,7 @@ pipeline {
             steps {
                 bat 'mvn clean package'
             post{
-                success "Archiving the Artifacts"
+                success{ echo "Archiving the Artifacts"
                 archiveArtifacts artifacts: '**/target/*.war'
             }
             }
